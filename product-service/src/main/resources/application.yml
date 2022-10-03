@@ -1,0 +1,15 @@
+server:
+  port: 9192
+spring:
+  application:
+    name: Microservice Products
+  data:
+    mongodb:
+      database: product-service
+      port: 27017
+      host: localhost
+info:
+  app:
+    name: Secure Platform Solutions Microservice Products
+    version: 1.0
+    decription: CRUD Products Microservice

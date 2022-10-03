@@ -1,0 +1,45 @@
+server:
+  port: 9193
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: vanessaandrandrin@gmail.com
+    password: xeswbvtvdbpxkelr
+    default-encoding: UTF-8
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/inventory_service?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+info:
+  app:
+    name: Warehouse Manager Application
+    description: This is the monitoring dashboard to trace the activities of all requests and responses
+    version: 1.0.0
