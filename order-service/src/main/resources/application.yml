@@ -1,6 +1,12 @@
 server:
   port: 9195
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9194/eureka
 spring:
+  application:
+    name: ms-orders
   mail:
     host: smtp.gmail.com
     port: 587

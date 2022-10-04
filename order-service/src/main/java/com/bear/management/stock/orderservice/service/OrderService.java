@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
 
@@ -41,8 +41,8 @@ public class OrderService {
                 .map(OrderLineItems::getSkuCode)
                 .collect(Collectors.toList());
 
-        InventoryResponse[] inventoryResponses = webClient.get()
-                .uri("http://localhost:9193/api/inventory",
+        InventoryResponse[] inventoryResponses = webClientBuilder.build().get()
+                .uri("http://ms-inventories/api/inventory",
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class)

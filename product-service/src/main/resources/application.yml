@@ -1,8 +1,12 @@
 server:
   port: 9192
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9194/eureka
 spring:
   application:
-    name: Microservice Products
+    name: ms-products
   data:
     mongodb:
       database: product-service

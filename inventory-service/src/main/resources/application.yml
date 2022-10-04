@@ -1,6 +1,12 @@
 server:
   port: 9193
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9194/eureka
 spring:
+  application:
+    name: ms-inventories
   mail:
     host: smtp.gmail.com
     port: 587
