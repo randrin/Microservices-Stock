@@ -8,4 +8,4 @@ eureka:
     fetch-registry: false
 spring:
   application:
-    name: ms-discovery-derver
+    name: ms-discovery-server
