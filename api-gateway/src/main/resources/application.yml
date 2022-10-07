@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9194/eureka
+      defaultZone: http://eureka:password@localhost:9194/eureka
 spring:
   cloud:
     gateway:
@@ -38,6 +38,11 @@ spring:
           uri: http://localhost:9194
           predicates:
             - Path=/eureka/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9190/realms/microservices-stock-realm
   application:
     name: ms-api-gateway
 logging:
