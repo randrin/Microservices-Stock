@@ -9,3 +9,7 @@ eureka:
 spring:
   application:
     name: ms-discovery-server
+app:
+  eureka:
+    username: eureka
+    password: password
